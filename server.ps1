@@ -6,7 +6,7 @@ $listener.Prefixes.Add($prefix)
 $listener.Start()
 Write-Host "Tamada Companion Server started at $prefix"
 
-$root = "C:\Users\t.kumsiashvili\.gemini\antigravity-ide\scratch\tamada-companion"
+$root = $PSScriptRoot
 
 try {
   while ($listener.IsListening) {
