@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Tamada Companion (თამადის ასისტენტი) | Georgian Supra Guide</title>
+  <meta name="description" content="The ultimate Georgian Supra Toastmaster companion app. Toast sequences, smart speech generator, soundboard, and cultural etiquette.">
+  <meta name="theme-color" content="#581825">
+  
+  <!-- PWA Manifest & Apple Touch -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍷</text></svg>">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍷</text></svg>">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+  <!-- Root App Container -->
+  <div id="app"></div>
+
+  <!-- Register Service Worker for Mobile PWA -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(err => console.log('SW register fail:', err));
+      });
+    }
+  </script>
+
+  <!-- Modular JavaScript Entry point -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
